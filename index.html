@@ -165,7 +165,9 @@ function sendAudio() {
     formData.append('audio', audioBlob, 'voice.webm');
     loader.style.display = 'block';
     answerBlock.style.display = 'none';
-    fetch('/recognize', {
+    // Укажите абсолютный адрес API backend (замените на свой при необходимости)
+    const backendUrl = 'http://localhost:8080/recognize'; // или http://<ваш-ip>:8080/recognize
+    fetch(backendUrl, {
         method: 'POST',
         body: formData
     })
